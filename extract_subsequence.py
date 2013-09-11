@@ -2,7 +2,9 @@
 __author__ = 'Dario Vianello'
 
 import sys
+import argparse
 
+#This tool need BioPython library
 from Bio import SeqIO
 
 
@@ -14,16 +16,16 @@ def extractSubsequence(sequence, startPosition, endPosition):
     return sequence[startPosition - 1:endPosition]
 
 
-if len(sys.argv) != 4:
-    print "Usage: extract_subsequence.py <fasta> <start> <end>"
-    sys.exit(1)
+parser = argparse.ArgumentParser(prog="extract_subsequence",
+                                 description="Extract a subsequence from a set of sequences, eventually combining more \
+                                 than one subsequence")
 
-inputFile = sys.argv[1]
-startPosition = int(sys.argv[2])
-endPosition = int(sys.argv[3])
+parser.add_argument('--fasta_file', nargs=1, type=file, required=True, help="FASTA file to be processed")
+parser.add_argument('subsequences', nargs='+', help="Subsequences to be extracted and joined")
+args = parser.parse_args()
+print args
 
-#endPosition = int(sys.argv[2])
-#startPosition = int(sys.argv[3])-1
+raise SystemExit
 
 f = open(sys.argv[1], 'r')
 output = open('dloops.fasta', 'w')

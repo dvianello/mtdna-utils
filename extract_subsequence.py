@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # coding=utf-8
 """
-A script to extract identical subsequences starting from sequences in FASTA format.
+A script to extract subsequences starting from sequences in FASTA format.
 
 Usage:
 

@@ -1,25 +1,25 @@
 #!/usr/bin/python
 # coding=utf-8
 """
-A script to extract identical subsequences starting from sequences in FASTA format.
+A script to extract subsequences starting from sequences in FASTA format.
 
 Usage:
 
-    extract_subsequence.py --fasta_file test_files/test_sequences.fasta 10 20
+    extract_subsequence.py --fasta_file test_files/test_sequences.fasta --output_file subsequences.fasta 10 20
 
-    This command will extract the range nucleotides from position 10 to 20 from all the sequences
-    contained in the fasta file test_sequences.fasta .
+    This command will extract the nucleotides ranging in position 10 to 20 from all the sequences
+    contained in the FASTA file test_sequences.fasta .
 
 
-    If you need to extract a subsequence from a given start position to the end of the seq, simply specify only
+    If you need to extract a subsequence from a given start position to the end of the seq, specify only
     the starting point:
 
-    extract_subsequence.py --fasta_file test_files/test_sequences.fasta 10
+    extract_subsequence.py --fasta_file test_files/test_sequences.fasta --output_file subsequences.fasta 10
 
 
     You can combine more than a subsequence in a single, composite, subsequence:
 
-    extract_subsequence.py --fasta_file test_files/test_sequences.fasta 10 20 30 40
+    extract_subsequence.py --fasta_file test_files/test_sequences.fasta --output_file subsequences.fasta 10 20 30 40
 
     this will output a single subsequence composed by the subsequences 10-20 30-40 for each sequence in the FASTA file.
 
